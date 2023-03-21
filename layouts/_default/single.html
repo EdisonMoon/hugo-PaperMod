@@ -12,9 +12,18 @@
     <div class="post-description">{{ .Description }}</div>
     {{- end }} {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
-      {{- partial "post_meta.html" . -}} {{- partial "translation_list.html" .
-      -}} {{- partial "edit_post.html" . -}} {{- partial "post_canonical.html" .
-      -}}
+      {{- partial "post_meta.html" . -}}
+      <!--在头部显示可跳转的标签-->
+      &nbsp;|&nbsp;标签: &nbsp; {{- if .Params.tags }}
+      <ul class="post-tags-meta">
+        {{- range $index, $value := ($.GetTerms "tags") }} {{- if eq $index 0}}
+        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        {{- else }}
+        <a href="{{ .Permalink }}">、{{ .LinkTitle }}</a>
+        {{- end }} {{- end }}
+      </ul>
+      {{- end }} {{- partial "translation_list.html" . -}} {{- partial
+      "edit_post.html" . -}} {{- partial "post_canonical.html" . -}}
       <!-- busuanzi -->
       {{ if .Site.Params.busuanzi.enable -}}
       <div class="meta-item">
