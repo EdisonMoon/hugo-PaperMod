@@ -2,6 +2,7 @@
 
 <header class="page-header">
   <h1>{{ .Title }}</h1>
+  <hr>
   {{- if .Description }}
   <div class="post-description">
     {{ .Description }}
@@ -11,7 +12,7 @@
 
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 
-{{- if .Site.Params.ShowAllPagesInArchive }}
+{{- if site.Params.ShowAllPagesInArchive }}
 {{- $pages = site.RegularPages }}
 {{- end }}
 
@@ -19,51 +20,11 @@
 {{- if ne .Key "0001" }}
 <div class="archive-year">
   <h2 class="archive-year-header">
-    {{- replace .Key "0001" "" }}年<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup>
+    {{- replace .Key "0001" "" }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup>
   </h2>
   {{- range .Pages.GroupByDate "January" }}
   <div class="archive-month">
-    <h3 class="archive-month-header">
-      {{- if eq .Key "December" }}
-      {{ "12月" }}
-      {{- end }}
-      {{- if eq .Key "November" }}
-      {{ "11月" }}
-      {{- end }}
-      {{- if eq .Key "October" }}
-      {{ "10月" }}
-      {{- end }}
-      {{- if eq .Key "September" }}
-      {{ "9月" }}
-      {{- end }}
-      {{- if eq .Key "August" }}
-      {{ "8月" }}
-      {{- end }}
-      {{- if eq .Key "July" }}
-      {{ "7月" }}
-      {{- end }}
-      {{- if eq .Key "June" }}
-      {{ "6月" }}
-      {{- end }}
-      {{- if eq .Key "May" }}
-      {{ "5月" }}
-      {{- end }}
-      {{- if eq .Key "April" }}
-      {{ "4月" }}
-      {{- end }}
-      {{- if eq .Key "March" }}
-      {{ "3月" }}
-      {{- end }}
-      {{- if eq .Key "February" }}
-      {{ "2月" }}
-      {{- end }}
-      {{- if eq .Key "January" }}
-      {{ "1月" }}
-      {{- end }}
-      <!-- {{- .Key }} -->
-      <sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}
-      </sup>
-    </h3>
+    <h3 class="archive-month-header">{{- .Key }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h3>
     <div class="archive-posts">
       {{- range .Pages }}
       {{- if eq .Kind "page" }}
@@ -87,7 +48,3 @@
 {{- end }}
 
 {{- end }}{{/* end main */}}
-
-————————————————
-版权声明：本文为「Sulv's Blog」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://www.sulvblog.cn/posts/blog/hugo_archives_chinese/
