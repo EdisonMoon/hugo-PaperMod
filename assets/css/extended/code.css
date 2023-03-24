@@ -1,12 +1,17 @@
 .post-content code {
-    font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", sans-serif;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-size: 0.92rem;
+    color: #e96900;
+    background-color: #f7f7f7;
+    font-family: "LXGWWenKaiLite-Bold",Consolas,"LXGWWenKaiLite-Bold"
 }
 
 .post-content pre code {
     max-height: 40em;
     margin-bottom: 2%;
     font-size: 0.75em;
-    font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: "LXGWWenKaiLite-Bold",Consolas,"LXGWWenKaiLite-Bold"
     /*border-radius: unset unset var(--radius) var(--radius) !important;*/
     border-top-left-radius: unset;
     border-top-right-radius: unset;

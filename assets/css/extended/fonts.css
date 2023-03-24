@@ -1,9 +1,16 @@
 @font-face {
-    font-family: "MaShanZheng-Regular";
-    src: url("/fonts/MaShanZheng-Regular.ttf") format("truetype");
+  font-family: "MaShanZheng-Regular";
+  src: url("/fonts/MaShanZheng-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "NeverMindHand-Regular";
-    src: url("/fonts/NeverMindHand-Regular.ttf") format("truetype");
+  font-family: "NeverMindHand-Regular";
+  src: url("/fonts/NeverMindHand-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "LXGWWenKaiLite-Bold";
+  src: url("https://github.com/EdisonMoon/cloudimg/blob/main/font/LXGWWenKaiLite-Bold.woff2")
+    format("woff2");
+  font-display: swap;
 }
