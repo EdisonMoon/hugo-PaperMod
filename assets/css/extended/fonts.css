@@ -8,9 +8,3 @@
   src: url("/fonts/NeverMindHand-Regular.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "LXGWWenKaiLite-Bold";
-  src: url("https://github.com/EdisonMoon/cloudimg/blob/main/font/LXGWWenKaiLite-Bold.woff2")
-    format("woff2");
-  font-display: swap;
-}
