@@ -58,3 +58,6 @@
 #theme-toggle:focus {
     outline: 0;
 }
+
+.dark .light-wormhole,.dark-wormhole{display: none;}
+.dark .dark-wormhole{display: block;}
